@@ -146,18 +146,17 @@ body {
 	height: 472px
 }
 
-#body .header div div {
-	height: 200px;
-	width: 490px
-}
-
 #body .header div h3 {
 	color: #fff;
-	font-size: 30px;
-	text-align: center;
+	font-size: 40px;
 	line-height: 50px;
-	margin: 18px 0 0;
-	padding: 0
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #body .header div h3 span {
@@ -559,10 +558,7 @@ body {
 
 #body .products div div {
 	float: left;
-	margin: 0;
 	padding: 0 10px;
-	text-align: center;
-	width: 300px
 }
 
 #body .products div div h3 {
@@ -702,7 +698,7 @@ body {
 }
 
 @media (min-width: 1025px) {
-    #body .footer div {
+	#body .footer div {
 		float: left
 	}
 }
