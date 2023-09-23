@@ -18,10 +18,7 @@
 	text-transform: uppercase
 }
 
-#body .blog ul li,
-#body .footer ul li {
-	background: url(../images/border-dashed.gif) bottom left repeat-x
-}
+
 
 #body,
 #footer {
@@ -138,7 +135,7 @@ body {
 }
 
 #body .header {
-	background: url(https://mbits.ac.in/wp-content/themes/mbits/images/banner.jpg) bottom center repeat-x;
+	background: url(../image/mbits-banner.png) bottom center repeat-x;
 	margin: 0 0 30px
 }
 
@@ -266,6 +263,16 @@ body {
 	padding: 0
 }
 
+.btn {
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
 #body .footer .featured p,
 #body .footer div,
 #body .footer div ul,
@@ -359,6 +366,7 @@ body {
 }
 
 #body .about,
+#body .home,
 #body .blog,
 #body .contact,
 #body .services {
