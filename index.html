@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +10,15 @@
 </head>
 
 <body>
+    <div class="toggle-ul" id="toggle-ul">
+        <ul>
+            <li onclick="toggleClose()">Close<i class="fa-solid fa-xmark"></i></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="contact.html">contact us</a></li>
+        </ul>
+    </div>
     <div id="header">
         <div class="hamburger" onclick="toggleMenu()">
             <i class="fa-solid fa-bars"></i>
@@ -129,7 +137,6 @@
             <p>&copy Copyright 2023. All rights reserved</p>
         </div>
     </div>
-    <!-- Latest compiled JavaScript -->
 </body>
-
+<script src="assets/scripts/script.js"></script>
 </html>

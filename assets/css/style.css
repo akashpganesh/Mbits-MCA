@@ -138,12 +138,12 @@ body {
 
 #body {
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
 
 #body .header {
 	background: url(../image/mbits-banner.png) bottom center repeat-x;
-	margin: 0 0 30px
+	margin: 0 0 30px;
 }
 
 #body .header div {
@@ -225,7 +225,7 @@ body {
 }
 
 #body .body div {
-	float: left
+	float: left;
 }
 
 #body .body .section {
@@ -379,7 +379,7 @@ body {
 #body .services {
 	margin: 0 auto;
 	padding: 25px 10px 50px;
-	width: 940px
+	width: 940px;
 }
 
 #body h1 {
@@ -777,6 +777,38 @@ body {
 	text-align: center
 }
 
+.toggle-ul {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.toggle-ul ul {
+    list-style-type: none;
+    padding-left: 0;
+	margin-left: 50%;
+}
+
+.toggle-ul ul li{
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    text-align: center;
+}
+
+.toggle-ul ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.toggle-ul ul li i {
+    font-size: 20px;
+}
+
 @media (min-width: 1025px) {
 	#body .footer div {
 		float: left
@@ -791,7 +823,11 @@ body {
 	#header .hamburger {
 		display: block;
 		margin: 0 30px;
-		font-size: 50px;
+		font-size: 30px;
+	}
+
+	#header {
+		justify-content: left;
 	}
 
 	#header #logo{
@@ -801,7 +837,7 @@ body {
 
 	#header #logo img {
 		margin-top: 0;
-		height: 60px;
+		height: 50px;
 	}
 
 	.card-container {
@@ -814,12 +850,58 @@ body {
 		box-shadow: none;
 	}
 
-	#body .about h2 {
+	.offer {
+		justify-content: center;
+	}
+
+	.offer div img {
+		height: 100px;
+		width: 100px;
+	}
+
+	/* #body .about h2 {
 		font-size: 32px;
 	}
 
 	#body .about p {
 		font-size: 28px;
 		line-height: 48px;
+	} */
+
+	#body .header div,
+	#header,
+	#body .body, 
+	#body .about,
+	#footer div,
+	#body .header{
+		width: 100%;
+	}
+
+	#body,
+	#footer{
+		min-width: 100%;
+	}
+
+	#body .about {
+		box-sizing: border-box;
+		padding-top: 0;
+	}
+
+	#header {
+		height: 80px;
+	}
+
+	#body .header {
+		background-size: cover;
+		height: 150px;
+	}
+
+	#body .header div {
+		height: 100%;
+	}
+
+	#body .header div h3 {
+		font-size: 20px;
+		line-height: 25px;
 	}
 }
