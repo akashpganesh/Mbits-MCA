@@ -19,10 +19,9 @@
 }
 
 
-
 #body,
 #footer {
-	min-width: 960px
+	min-width: 960px;
 }
 
 #body .blog,
@@ -49,22 +48,30 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
 
 #header {
-	padding: 0
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+#header .hamburger {
+	display: none;
 }
 
 #header #logo {
-	float: left;
 	height: 144px;
-	width: 355px
+	width: 355px;
 }
 
 #header #logo img {
 	border: 0;
-	margin-top: 30px
+	margin-top: 30px;
+	object-fit: cover;
 }
 
 #header ul {
@@ -427,9 +434,9 @@ body {
 	padding: 5px 0
 }
 
-#body .about div {
+/* #body .about div {
 	padding: 50px 0 0
-}
+} */
 
 #body .about h2 {
 	color: #2a4f5e;
@@ -446,7 +453,6 @@ body {
 	margin: 10px 0 0;
 	padding: 0;
 	text-align: justify;
-	width: 830px
 }
 
 #body .services h2,
@@ -633,6 +639,72 @@ body {
 	font-weight: 700
 }
 
+.about-us {
+	margin-top: 30px;
+}
+
+.mission-vision, 
+.update-event,
+.offer {
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.mission-vision div,
+.update-event div{
+	width: calc(50% - 30px);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.update-event {
+	margin-top: 0;
+}
+
+.update-event h1 {
+	text-align: center;
+}
+
+.update-event div{
+	width: calc(50% - 32px);
+	box-shadow: none;
+	border: 0.5px solid #5d5d5d;
+	border-radius: 5px;
+}
+
+.update-event div ul {
+	list-style: none;
+}
+
+.offers-container {
+	margin-top: 30px;
+}
+
+.offer {
+	align-items: center;
+	justify-content: space-between;
+}
+
+.offer div {
+	border: 0.5px solid #5d5d5d;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#body #offer div p {
+	text-align: center;
+}
+
+.offer div img{
+	width: 250px;
+    height: 250px;
+    object-fit: cover;
+	margin-bottom: 10px;
+}
+
 #footer {
 	background: url(../images/bg-footer.gif) top left repeat-x #f5f5f5;
 	margin: 0;
@@ -708,5 +780,46 @@ body {
 @media (min-width: 1025px) {
 	#body .footer div {
 		float: left
+	}
+}
+
+@media (max-width: 1000px){
+	#header ul {
+		display: none;
+	}
+
+	#header .hamburger {
+		display: block;
+		margin: 0 30px;
+		font-size: 50px;
+	}
+
+	#header #logo{
+		display: flex;
+		align-items: center;
+	}
+
+	#header #logo img {
+		margin-top: 0;
+		height: 60px;
+	}
+
+	.card-container {
+		width: 100%;
+	}
+
+	.mission-vision div, 
+	.update-event div {
+		width: 100%;
+		box-shadow: none;
+	}
+
+	#body .about h2 {
+		font-size: 32px;
+	}
+
+	#body .about p {
+		font-size: 28px;
+		line-height: 48px;
 	}
 }
