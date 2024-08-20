@@ -1,7 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+/* Loader */
+.loader {
+    width: 50px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #346b84;
+    --_m: 
+      conic-gradient(#0000 10%,#000),
+      linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    animation: l3 1s infinite linear;
+   position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+  @keyframes l3 {to{transform: rotate(1turn)}}
+
+/* Hide content initially */
+.hidden {
+    display: none;
+}
+
 #body .header div,
 #header {
 	margin: 0 auto;
-	width: 960px
+	width: 960px;
 }
 
 #body .body .section a,
@@ -19,10 +51,9 @@
 }
 
 
-
 #body,
 #footer {
-	min-width: 960px
+	min-width: 960px;
 }
 
 #body .blog,
@@ -49,28 +80,40 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
 
 #header {
-	padding: 0
+	position: sticky;
+	top: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+}
+
+#header .hamburger {
+	display: none;
 }
 
 #header #logo {
-	float: left;
-	height: 144px;
-	width: 355px
+	
+	width: 355px;
 }
 
 #header #logo img {
 	border: 0;
-	margin-top: 30px
+	margin: 20px 0;
+	object-fit: cover;
+	width: 220px;
 }
 
 #header ul {
-	float: right;
 	margin: 0;
-	padding: 70px 0 0;
+	/* padding: 70px 0 0; */
 	width: 605px
 }
 
@@ -88,14 +131,14 @@ body {
 #header ul li a:hover span,
 #header ul li.selected a,
 #header ul li.selected a span {
-	background: url(../images/menu.gif)
+	font-weight: bold;
 }
 
 #header ul li a {
 	background-position: 10px 0;
 	color: #2a4f5e;
 	display: block;
-	font-size: 14px;
+	font-size: 16px;
 	height: 36px;
 	line-height: 36px;
 	margin: 0;
@@ -121,7 +164,7 @@ body {
 
 #header ul li.selected a {
 	background-position: 10px 36px;
-	color: #fff;
+	color: #2a4f5e;
 	text-shadow: none
 }
 
@@ -131,12 +174,14 @@ body {
 
 #body {
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
 
 #body .header {
 	background: url(../image/mbits-banner.png) bottom center repeat-x;
-	margin: 0 0 30px
+	margin: 0 0 30px;
+	background-size: cover;
+	background-position: 50%;
 }
 
 #body .header div {
@@ -218,7 +263,7 @@ body {
 }
 
 #body .body div {
-	float: left
+	float: left;
 }
 
 #body .body .section {
@@ -372,7 +417,7 @@ body {
 #body .services {
 	margin: 0 auto;
 	padding: 25px 10px 50px;
-	width: 940px
+	width: 940px;
 }
 
 #body h1 {
@@ -427,9 +472,9 @@ body {
 	padding: 5px 0
 }
 
-#body .about div {
+/* #body .about div {
 	padding: 50px 0 0
-}
+} */
 
 #body .about h2 {
 	color: #2a4f5e;
@@ -439,6 +484,12 @@ body {
 	padding: 0
 }
 
+#body .about h3{
+	color: #2a4f5e;
+	font-size: 14px;
+	font-weight: 700;
+}
+
 #body .about p {
 	color: #5d5d5d;
 	font-size: 14px;
@@ -446,7 +497,6 @@ body {
 	margin: 10px 0 0;
 	padding: 0;
 	text-align: justify;
-	width: 830px
 }
 
 #body .services h2,
@@ -633,6 +683,122 @@ body {
 	font-weight: 700
 }
 
+.about-us {
+	margin-top: 30px;
+}
+
+.about-department,
+.course,
+.facilities,
+.faculty{
+	margin-top: 30px;
+}
+
+.mission-vision, 
+.update-event,
+.offer {
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.mission-vision div,
+.update-event div{
+	flex: 1;
+	width: 50%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.update-event {
+	margin-top: 0;
+}
+
+.update-event h1 {
+	text-align: center;
+}
+
+.update-event div{
+	box-shadow: none;
+	border: 0.5px solid #5d5d5d;
+	border-radius: 5px;
+}
+
+.update-event div ul {
+	list-style: none;
+}
+
+.offers-container {
+	margin-top: 30px;
+}
+
+.offer {
+	align-items: center;
+	justify-content: space-between;
+}
+
+.offer div {
+	border: 0.5px solid #5d5d5d;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.about-college{
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.about-college img {
+	width: 290px;
+}
+
+#body #offer div p {
+	text-align: center;
+}
+
+.offer div img{
+	width: 250px;
+    height: 250px;
+    object-fit: cover;
+	margin-bottom: 10px;
+}
+
+dl {
+	border: 1px solid #ddd;
+	padding: 10px;
+	background-color: #f9f9f9;
+}
+
+.faculty div {
+	display: flex;
+	margin-top: 10px;
+	gap: 10px;
+}
+
+.faculty-profile {
+	display: flex;
+	min-height: max-content;
+	padding: 5px;
+	width: 50%;
+	gap: 10px;
+	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+	border: 0.5px solid #5d5d5d;
+	border-radius: 2px;
+	background-color: #f9f9f9;
+}
+
+.faculty-profile div{
+	display: block;
+	margin-top: 0;
+}
+
+.faculty-profile img {
+	height: 175px;
+}
+
 #footer {
 	background: url(../images/bg-footer.gif) top left repeat-x #f5f5f5;
 	margin: 0;
@@ -705,8 +871,182 @@ body {
 	text-align: center
 }
 
+.toggle-ul {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	z-index: 1;
+}
+
+.toggle-ul ul {
+    list-style-type: none;
+    padding-left: 0;
+	margin-left: 50%;
+}
+
+.toggle-ul ul li{
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    text-align: center;
+}
+
+.toggle-ul ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.toggle-ul ul li i {
+    font-size: 20px;
+}
+
+#footer iframe {
+	width: 100%;
+}
+
 @media (min-width: 1025px) {
 	#body .footer div {
 		float: left
+	}
+}
+
+@media (max-width: 960px){
+	#header ul {
+		display: none;
+	}
+
+	#header .hamburger {
+		display: block;
+		margin: 0 30px;
+		font-size: 30px;
+	}
+
+	#header {
+		justify-content: left;
+	}
+
+	#header #logo{
+		display: flex;
+		align-items: center;
+	}
+
+	#header #logo img {
+		margin: 10px 0;
+		width: 175px;
+	}
+
+	.card-container {
+		width: 100%;
+	}
+
+	.mission-vision div, 
+	.update-event div {
+		flex: none;
+		width: 100%;
+		box-shadow: none;
+		padding: 0;
+	}
+
+	.offer {
+		justify-content: center;
+	}
+
+	.offer div {
+		width: 29%;
+	}
+
+	.offer div img {
+		width: 100%;
+		height: 100%;
+		margin-bottom: 0;
+	}
+
+	.about-college {
+		flex-wrap: wrap;
+	}
+
+	.about-college img {
+		width: 100%;
+		margin-top: 10px;
+	}
+
+	.faculty div {
+		flex-wrap: wrap;
+	}
+
+	.faculty-profile {
+		width: 100%;
+		display: flex;
+	}
+
+	.faculty-profile div {
+		flex: 1;
+	}
+
+	#body .header div,
+	#header,
+	#body .body, 
+	#body .about,
+	#footer div,
+	#body .header{
+		width: 100%;
+	}
+
+	#body,
+	#footer{
+		min-width: 100%;
+	}
+
+	#body .about {
+		box-sizing: border-box;
+		padding-top: 0;
+	}
+
+	#header {
+		height: 80px;
+	}
+
+	#body .header {
+		background-size: cover;
+		height: 150px;
+	}
+
+	#body .header div {
+		height: 100%;
+	}
+
+	#body .header div h3 {
+		font-size: 20px;
+		line-height: 25px;
+	}
+
+	#footer div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	#footer div div {
+		width: 100%;
+	}
+
+	#footer div div img{
+		width: 192px;
+	}
+
+	#footer .social-media {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 150px;
+	}
+
+	#footer iframe {
+		width: calc(100% - 20px);
 	}
 }
