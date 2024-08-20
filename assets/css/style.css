@@ -93,6 +93,7 @@ body {
 	width: 100%;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	background-color: #fff;
+	z-index: 2;
 }
 
 #header .hamburger {
@@ -727,7 +728,8 @@ body {
 }
 
 .update-event div ul {
-	list-style: none;
+	list-style-type: disc;
+	margin-right: 30px;
 }
 
 .offers-container {
@@ -766,7 +768,8 @@ body {
 	margin-bottom: 10px;
 }
 
-dl {
+dl,
+.contact-us{
 	border: 1px solid #ddd;
 	padding: 10px;
 	background-color: #f9f9f9;
@@ -797,6 +800,102 @@ dl {
 
 .faculty-profile img {
 	height: 175px;
+}
+
+.gallery {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.gallery div {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width: calc(100% / 3);
+	height: 200px;
+	cursor: pointer;
+	background-size: cover;
+	border-radius: 5px;
+	overflow: hidden;
+	background-size: 100%;
+	transition: background-size 1s ease-in-out;
+}
+
+.gallery div:hover{
+	background-size: 120%;
+}
+
+.gallery div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity to darken the image */
+    z-index: 1;
+}
+
+.program {
+	margin-top: 30px;
+}
+
+.gallery-images {
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+	flex-wrap: wrap;
+}
+
+.gallery-images img {
+	flex: 1;
+	max-width: calc(100% / 3);
+	height: 200px;
+	object-fit: cover;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#body .gallery div h1 {
+	color: #fff;
+	z-index: 1;
+	font-size: 50px;
+	margin: 0;
+	padding: 0;
+}
+
+.gallery .y-2023 {
+	background-image: url(../image/onam-01.jpeg);
+}
+
+#image-disp {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.655);
+	z-index: 3;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+#image-disp img {
+	width: 100%;
+	height: 100vh;
+	object-fit: contain;
+}
+
+#image-disp i {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 50px;
+	cursor: pointer;
+	color: #fff;
 }
 
 #footer {
@@ -927,6 +1026,7 @@ dl {
 
 	#header {
 		justify-content: left;
+		position: static;
 	}
 
 	#header #logo{
@@ -985,6 +1085,19 @@ dl {
 
 	.faculty-profile div {
 		flex: 1;
+	}
+
+	.gallery div {
+		width: 100%;
+	}
+
+	.gallery-images {
+		flex-wrap: wrap;
+	}
+
+	.gallery-images img {
+		flex: 1;
+		min-width: 100%;
 	}
 
 	#body .header div,
