@@ -46,3 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("y-2023").addEventListener("click", function() {
     window.location.href = "./Gallery/year2023.html";
 });
+
+document.getElementById("y-2024").addEventListener("click", function() {
+    window.location.href = "./Gallery/year2024.html";
+});

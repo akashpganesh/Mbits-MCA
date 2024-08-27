@@ -131,11 +131,13 @@ body {
 #header ul li a:hover,
 #header ul li a:hover span,
 #header ul li.selected a,
-#header ul li.selected a span {
+#header ul li.selected a span,
+.toggle-ul ul li a {
 	font-weight: bold;
 }
 
-#header ul li a {
+#header ul li a,
+.toggle-ul ul li a {
 	background-position: 10px 0;
 	color: #2a4f5e;
 	display: block;
@@ -146,7 +148,8 @@ body {
 	padding: 0 0 0 10px
 }
 
-#header ul li a span {
+#header ul li a span,
+.toggle-ul ul li a span {
 	background-position: -70px 0;
 	display: block;
 	margin: 0;
@@ -779,13 +782,14 @@ dl,
 	display: flex;
 	margin-top: 10px;
 	gap: 10px;
+	flex-wrap: wrap;
 }
 
 .faculty-profile {
 	display: flex;
 	min-height: max-content;
 	padding: 5px;
-	width: 50%;
+	width: calc(50% - 5px);
 	gap: 10px;
 	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 	border: 0.5px solid #5d5d5d;
@@ -800,6 +804,7 @@ dl,
 
 .faculty-profile img {
 	height: 175px;
+	border-radius: 5px;
 }
 
 .gallery {
@@ -852,8 +857,8 @@ dl,
 }
 
 .gallery-images img {
-	flex: 1;
-	max-width: calc(100% / 3);
+	/* flex: 1; */
+	width: calc((100% / 3) - (20px / 3) );
 	height: 200px;
 	object-fit: cover;
 	border-radius: 5px;
@@ -866,10 +871,6 @@ dl,
 	font-size: 50px;
 	margin: 0;
 	padding: 0;
-}
-
-.gallery .y-2023 {
-	background-image: url(../image/onam-01.jpeg);
 }
 
 #image-disp {
@@ -978,7 +979,7 @@ dl,
     transform: translateX(-100%);
     transition: 0.5s ease-in-out;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	z-index: 1;
+	z-index: 2;
 }
 
 .toggle-ul ul {
@@ -994,13 +995,15 @@ dl,
     text-align: center;
 }
 
-.toggle-ul ul li a{
+.toggle-ul ul li a,
+.toggle-ul ul li{
     text-decoration: none;
-    color: black;
+    color: #2a4f5e;
 }
 
 .toggle-ul ul li i {
     font-size: 20px;
+	color: #2a4f5e;
 }
 
 #footer iframe {
